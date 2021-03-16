@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/hellogrpc/HelloGrpc/.vs/HelloGrpc
+/src/hellogrpc/HelloGrpc/bin/Debug/netcoreapp3.1
+/src/hellogrpc/HelloGrpc/obj
+/src/hellogrpc/HelloRpcClient/bin/Debug/netcoreapp3.1
+/src/hellogrpc/HelloRpcClient/obj
