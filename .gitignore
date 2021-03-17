@@ -13,3 +13,6 @@
 /src/Services/HelloRpcClient/.vs
 /src/Services/HelloRpcClient/bin/Debug/netcoreapp3.1
 /src/Services/HelloRpcClient/obj
+/src/Services/Bank.Api/.vs/Bank.Api/v16
+/src/Services/Bank.Api/bin/Debug/netcoreapp3.1
+/src/Services/Bank.Api/obj
