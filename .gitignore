@@ -16,3 +16,6 @@
 /src/Services/Bank.Api/.vs/Bank.Api/v16
 /src/Services/Bank.Api/bin/Debug/netcoreapp3.1
 /src/Services/Bank.Api/obj
+/src/Services/AccountService/.vs/AccountService/v16
+/src/Services/AccountService/bin/Debug/netcoreapp3.1
+/src/Services/AccountService/obj
