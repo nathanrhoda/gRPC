@@ -7,3 +7,9 @@
 /src/hellogrpc/HelloGrpc/obj
 /src/hellogrpc/HelloRpcClient/bin/Debug/netcoreapp3.1
 /src/hellogrpc/HelloRpcClient/obj
+/src/Services/hellogrpc/.vs/HelloGrpc
+/src/Services/hellogrpc/bin/Debug/netcoreapp3.1
+/src/Services/hellogrpc/obj
+/src/Services/HelloRpcClient/.vs
+/src/Services/HelloRpcClient/bin/Debug/netcoreapp3.1
+/src/Services/HelloRpcClient/obj
