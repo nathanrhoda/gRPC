@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Withdraw.Domain\Withdraw.Domain.csproj" />
     <ProjectReference Include="..\Withdraw.Messages\Withdraw.Messages.csproj" />
   </ItemGroup>
 

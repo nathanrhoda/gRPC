@@ -13,4 +13,8 @@
     <ProjectReference Include="..\Bank.Messages\Bank.Messages.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="proto\" />
+  </ItemGroup>
+
 </Project>

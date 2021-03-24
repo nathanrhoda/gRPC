@@ -24,13 +24,20 @@ namespace Bank.Api.Controllers
                 return BadRequest(request);
             }
 
-            var result = await _withdrawService.Withdrawal(request.AccountNumber, request.Amount);
-
-            return await Task.FromResult(new WithdrwaResponse
+            try
             {
-                Result = result,
-                TransactionId = Guid.NewGuid().ToString()
-            });
+                var result = await _withdrawService.Withdrawal(request.AccountNumber, request.Amount);
+
+                return await Task.FromResult(new WithdrwaResponse
+                {
+                    Result = result,
+                    TransactionId = Guid.NewGuid().ToString()
+                });
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+            }
         }
     }
 }

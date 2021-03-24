@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Accounts.Server.Protos";
+
+message AccountGrpcRequest
+{
+	string accountnumber = 1;	
+}
+
+message AccountGrpcResponse
+{
+	string accountnumber = 1;
+	int64 amount = 2;
+}
+
+service AccountGrpcService
+{
+	rpc GetAccount(AccountGrpcRequest) returns (AccountGrpcResponse);
+}

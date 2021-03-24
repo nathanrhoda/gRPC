@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Withdraw.Domain;
 
 namespace Withdraw.Api
 {
@@ -32,6 +33,8 @@ namespace Withdraw.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Withdraw.Api", Version = "v1" });
             });
+
+            services.AddSingleton<IWithdrawService, WithdrawService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

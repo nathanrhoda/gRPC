@@ -35,3 +35,15 @@
 /src/Bank/Withdraw.Messages/bin/Debug/netstandard2.0
 /src/Bank/Withdraw.Messages/obj
 /src/Services/.vs
+/src/Bank/Accounts.Domain/bin/Debug/netstandard2.0
+/src/Bank/Accounts.Domain/obj
+/src/Bank/Accounts.Server/bin/Debug/net5.0
+/src/Bank/Accounts.Server/obj
+/src/Bank/Withdraw.Domain/bin/Debug/netstandard2.0
+/src/Bank/Withdraw.Domain/obj
+/src/Bank/Withdraw.Server/bin/Debug/net5.0
+/src/Bank/Withdraw.Server/obj
+/src/Bank/Account.Client/bin/Debug/net5.0
+/src/Bank/Account.Client/obj
+/src/Bank/Accounts.Client/bin/Debug/net5.0
+/src/Bank/Accounts.Client/obj

@@ -23,7 +23,7 @@ namespace Bank.Domain
 
             if (!AccountExists(account))
             {
-                return "Account does not exist";
+                throw new Exception("Account does not exist");
             }
 
             if (EnoughMoneyInAccountForWithdrawal(amount, account))
