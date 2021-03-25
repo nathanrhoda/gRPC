@@ -1,4 +1,5 @@
-﻿using Accounts.Domain.Models;
+﻿using AccountIntegrationClient;
+using Accounts.Domain.Models;
 using System;
 using System.Threading.Tasks;
 
@@ -6,34 +7,46 @@ namespace Accounts.Domain
 {
     public class AccountService : IAccountService
     {
-        private double _defaultBalance = 10000;
-        public async Task<Account> GetAccountBy(string accountNumber)
+        private AccountClient _accountClient;
+
+        public AccountService()
         {
-            Account account = null;
-            if (accountNumber == "123")
+            _accountClient = new AccountClient();
+        }
+        public async Task<Account> GetAccountByGrpc(string accountNumber)
+        {
+            var response = await _accountClient.FetchAccount(accountNumber);
+
+            if (response == null)
             {
-                account = new Account
-                {
-                    AccountNumber = accountNumber,
-                    Balance = _defaultBalance
-                };
+                return null;
             }
+
+            var account = new Account
+            {
+                AccountNumber = response.Accountnumber,
+                Balance = response.Amount
+            };
 
             return await Task.FromResult(account);
 
         }
 
-        public async Task<Account> UpdateBalance(string accountNumber, double amount)
+
+        public async Task<Account> UpdateBalanceByGrpc(string accountNumber, double amount)
         {
-            Account account = null;
-            if (accountNumber == "123")
+            var response = await _accountClient.UpdateBalance(accountNumber, amount);
+
+            if (response == null)
             {
-                account = new Account
-                {
-                    AccountNumber = accountNumber,
-                    Balance = _defaultBalance
-                };
+                return null;
             }
+
+            var account = new Account
+            {
+                AccountNumber = response.Accountnumber,
+                Balance = response.Amount
+            };
 
             return await Task.FromResult(account);
         }

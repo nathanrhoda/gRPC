@@ -47,3 +47,10 @@
 /src/Bank/Account.Client/obj
 /src/Bank/Accounts.Client/bin/Debug/net5.0
 /src/Bank/Accounts.Client/obj
+/src/Bank/AccountConsoleClient/bin/Debug
+/src/Bank/AccountConsoleClient/obj
+/src/Bank/Accounts.Domain/bin/Debug/netstandard2.1
+/src/Bank/Bank.Domain/bin/Debug/netstandard2.1
+/src/Bank/Withdraw.Domain/bin/Debug/netstandard2.1
+/src/Bank/WithdrawIntegrationClient/bin/Debug/netstandard2.1
+/src/Bank/WithdrawIntegrationClient/obj

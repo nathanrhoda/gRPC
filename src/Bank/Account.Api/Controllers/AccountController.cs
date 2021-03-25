@@ -24,7 +24,7 @@ namespace Account.Api.Controllers
                 return BadRequest(accountnumber);
             }
 
-            var account = await _accountService.GetAccountBy(accountnumber);
+            var account = await _accountService.GetAccountByGrpc(accountnumber);
 
             if (account == null)
             {
@@ -48,7 +48,7 @@ namespace Account.Api.Controllers
                 return BadRequest(accountnumber);
             }
 
-            var account = await _accountService.UpdateBalance(accountnumber, amount);
+            var account = await _accountService.UpdateBalanceByGrpc(accountnumber, amount);
 
             if(account == null)
             {

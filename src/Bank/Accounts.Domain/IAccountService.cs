@@ -5,7 +5,7 @@ namespace Accounts.Domain
 {
     public interface IAccountService
     {
-        Task<Account> GetAccountBy(string accountNumber);
-        Task<Account> UpdateBalance(string accountNumber, double amount);
+        Task<Account> GetAccountByGrpc(string accountNumber);
+        Task<Account> UpdateBalanceByGrpc(string accountNumber, double amount);
     }
 }

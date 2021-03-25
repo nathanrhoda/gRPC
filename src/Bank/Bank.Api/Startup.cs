@@ -1,3 +1,4 @@
+using AccountIntegrationClient;
 using Bank.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using WithdrawIntegrationClient;
 
 namespace Bank.Api
 {
@@ -28,25 +30,11 @@ namespace Bank.Api
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Bank.Api", Version = "v1" });
-            });
-
-            services.AddHttpContextAccessor();
-
-            services.AddHttpClient("AccountApi", h =>
-            {
-                h.BaseAddress = new Uri("https://localhost:44385/");
-                h.DefaultRequestHeaders.Accept.Clear();
-                h.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            });
-
-            services.AddHttpClient("WithdrawApi", h =>
-            {
-                h.BaseAddress = new Uri("https://localhost:44392/");
-                h.DefaultRequestHeaders.Accept.Clear();
-                h.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            });
+            });            
 
             services.AddSingleton<IWithdrawService, WithdrawService>();
+            services.AddSingleton<IAccountClient, AccountClient>();
+            services.AddSingleton<IWithdrawClient, WithdrawClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -26,7 +26,7 @@ namespace Bank.Api.Controllers
 
             try
             {
-                var result = await _withdrawService.Withdrawal(request.AccountNumber, request.Amount);
+                var result = await _withdrawService.WithdrawalGprc(request.AccountNumber, request.Amount);
 
                 return await Task.FromResult(new WithdrwaResponse
                 {
@@ -36,7 +36,7 @@ namespace Bank.Api.Controllers
             }
             catch (Exception ex)
             {
-                return NotFound(ex);
+                return NotFound(request.AccountNumber);
             }
         }
     }

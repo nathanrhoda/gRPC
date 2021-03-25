@@ -4,6 +4,6 @@ namespace Withdraw.Domain
 {
     public interface IWithdrawService
     {
-        Task<bool> Withdraw(string accountnumber, double amount);
+        Task<bool> WithdrawGrpc(string accountnumber, double amount);        
     }
 }

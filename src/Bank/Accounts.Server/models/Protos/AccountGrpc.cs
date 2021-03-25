@@ -44,12 +44,20 @@ namespace Accounts.Server.Protos {
 
     static readonly grpc::Marshaller<global::Accounts.Server.Protos.AccountGrpcRequest> __Marshaller_AccountGrpcRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Accounts.Server.Protos.AccountGrpcRequest.Parser));
     static readonly grpc::Marshaller<global::Accounts.Server.Protos.AccountGrpcResponse> __Marshaller_AccountGrpcResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Accounts.Server.Protos.AccountGrpcResponse.Parser));
+    static readonly grpc::Marshaller<global::Accounts.Server.Protos.UpdateBalanceRequest> __Marshaller_UpdateBalanceRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Accounts.Server.Protos.UpdateBalanceRequest.Parser));
 
     static readonly grpc::Method<global::Accounts.Server.Protos.AccountGrpcRequest, global::Accounts.Server.Protos.AccountGrpcResponse> __Method_GetAccount = new grpc::Method<global::Accounts.Server.Protos.AccountGrpcRequest, global::Accounts.Server.Protos.AccountGrpcResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetAccount",
         __Marshaller_AccountGrpcRequest,
+        __Marshaller_AccountGrpcResponse);
+
+    static readonly grpc::Method<global::Accounts.Server.Protos.UpdateBalanceRequest, global::Accounts.Server.Protos.AccountGrpcResponse> __Method_UpdateBalance = new grpc::Method<global::Accounts.Server.Protos.UpdateBalanceRequest, global::Accounts.Server.Protos.AccountGrpcResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateBalance",
+        __Marshaller_UpdateBalanceRequest,
         __Marshaller_AccountGrpcResponse);
 
     /// <summary>Service descriptor</summary>
@@ -67,6 +75,11 @@ namespace Accounts.Server.Protos {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      public virtual global::System.Threading.Tasks.Task<global::Accounts.Server.Protos.AccountGrpcResponse> UpdateBalance(global::Accounts.Server.Protos.UpdateBalanceRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -74,7 +87,8 @@ namespace Accounts.Server.Protos {
     public static grpc::ServerServiceDefinition BindService(AccountGrpcServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetAccount, serviceImpl.GetAccount).Build();
+          .AddMethod(__Method_GetAccount, serviceImpl.GetAccount)
+          .AddMethod(__Method_UpdateBalance, serviceImpl.UpdateBalance).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -84,6 +98,7 @@ namespace Accounts.Server.Protos {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, AccountGrpcServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetAccount, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Accounts.Server.Protos.AccountGrpcRequest, global::Accounts.Server.Protos.AccountGrpcResponse>(serviceImpl.GetAccount));
+      serviceBinder.AddMethod(__Method_UpdateBalance, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Accounts.Server.Protos.UpdateBalanceRequest, global::Accounts.Server.Protos.AccountGrpcResponse>(serviceImpl.UpdateBalance));
     }
 
   }

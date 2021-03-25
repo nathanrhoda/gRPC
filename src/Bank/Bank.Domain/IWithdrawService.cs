@@ -3,7 +3,7 @@
 namespace Bank.Domain
 {
     public interface IWithdrawService
-    {
-        Task<string> Withdrawal(string accountNumber, double amount);
+    {        
+        Task<string> WithdrawalGprc(string accountNumber, double amount);
     }
 }

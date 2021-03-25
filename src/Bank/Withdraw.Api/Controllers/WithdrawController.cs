@@ -17,9 +17,9 @@ namespace Withdraw.Api.Controllers
         }
         // POST api/<WithdrawController>
         [HttpPost("{accountnumber}")]
-        public async Task<ActionResult<WithdrawResponse>> Post([FromRoute] string accountnumber, [FromBody] string amount)
+        public async Task<ActionResult<WithdrawResponse>> Post([FromRoute] string accountnumber, [FromBody] double amount)
         {
-            var convertedAmount = Convert.ToDouble(amount);
+            var convertedAmount = amount;
             if (String.IsNullOrEmpty(accountnumber) || convertedAmount <= 0)
             {
                 return BadRequest("Invalid accountnumber or amount");
@@ -27,7 +27,7 @@ namespace Withdraw.Api.Controllers
 
             try
             {
-                var isSuccessfull = await _withdrawService.Withdraw(accountnumber, convertedAmount);
+                var isSuccessfull = await _withdrawService.WithdrawGrpc(accountnumber, convertedAmount);
 
 
                 return await Task.FromResult(new WithdrawResponse

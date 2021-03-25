@@ -25,15 +25,19 @@ namespace Accounts.Server.Protos {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChRQcm90b3MvYWNjb3VudC5wcm90byIrChJBY2NvdW50R3JwY1JlcXVlc3QS",
-            "FQoNYWNjb3VudG51bWJlchgBIAEoCSI8ChNBY2NvdW50R3JwY1Jlc3BvbnNl",
-            "EhUKDWFjY291bnRudW1iZXIYASABKAkSDgoGYW1vdW50GAIgASgDMk0KEkFj",
-            "Y291bnRHcnBjU2VydmljZRI3CgpHZXRBY2NvdW50EhMuQWNjb3VudEdycGNS",
-            "ZXF1ZXN0GhQuQWNjb3VudEdycGNSZXNwb25zZUIZqgIWQWNjb3VudHMuU2Vy",
-            "dmVyLlByb3Rvc2IGcHJvdG8z"));
+            "FQoNYWNjb3VudG51bWJlchgBIAEoCSI9ChRVcGRhdGVCYWxhbmNlUmVxdWVz",
+            "dBIVCg1hY2NvdW50bnVtYmVyGAEgASgJEg4KBmFtb3VudBgCIAEoAyI8ChNB",
+            "Y2NvdW50R3JwY1Jlc3BvbnNlEhUKDWFjY291bnRudW1iZXIYASABKAkSDgoG",
+            "YW1vdW50GAIgASgDMosBChJBY2NvdW50R3JwY1NlcnZpY2USNwoKR2V0QWNj",
+            "b3VudBITLkFjY291bnRHcnBjUmVxdWVzdBoULkFjY291bnRHcnBjUmVzcG9u",
+            "c2USPAoNVXBkYXRlQmFsYW5jZRIVLlVwZGF0ZUJhbGFuY2VSZXF1ZXN0GhQu",
+            "QWNjb3VudEdycGNSZXNwb25zZUIZqgIWQWNjb3VudHMuU2VydmVyLlByb3Rv",
+            "c2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Accounts.Server.Protos.AccountGrpcRequest), global::Accounts.Server.Protos.AccountGrpcRequest.Parser, new[]{ "Accountnumber" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Accounts.Server.Protos.UpdateBalanceRequest), global::Accounts.Server.Protos.UpdateBalanceRequest.Parser, new[]{ "Accountnumber", "Amount" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Accounts.Server.Protos.AccountGrpcResponse), global::Accounts.Server.Protos.AccountGrpcResponse.Parser, new[]{ "Accountnumber", "Amount" }, null, null, null, null)
           }));
     }
@@ -213,6 +217,214 @@ namespace Accounts.Server.Protos {
 
   }
 
+  public sealed partial class UpdateBalanceRequest : pb::IMessage<UpdateBalanceRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdateBalanceRequest> _parser = new pb::MessageParser<UpdateBalanceRequest>(() => new UpdateBalanceRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UpdateBalanceRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Accounts.Server.Protos.AccountReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateBalanceRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateBalanceRequest(UpdateBalanceRequest other) : this() {
+      accountnumber_ = other.accountnumber_;
+      amount_ = other.amount_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UpdateBalanceRequest Clone() {
+      return new UpdateBalanceRequest(this);
+    }
+
+    /// <summary>Field number for the "accountnumber" field.</summary>
+    public const int AccountnumberFieldNumber = 1;
+    private string accountnumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Accountnumber {
+      get { return accountnumber_; }
+      set {
+        accountnumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "amount" field.</summary>
+    public const int AmountFieldNumber = 2;
+    private long amount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Amount {
+      get { return amount_; }
+      set {
+        amount_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateBalanceRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UpdateBalanceRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Accountnumber != other.Accountnumber) return false;
+      if (Amount != other.Amount) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Accountnumber.Length != 0) hash ^= Accountnumber.GetHashCode();
+      if (Amount != 0L) hash ^= Amount.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Accountnumber.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Accountnumber);
+      }
+      if (Amount != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Amount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Accountnumber.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Accountnumber);
+      }
+      if (Amount != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Amount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Accountnumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Accountnumber);
+      }
+      if (Amount != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Amount);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UpdateBalanceRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Accountnumber.Length != 0) {
+        Accountnumber = other.Accountnumber;
+      }
+      if (other.Amount != 0L) {
+        Amount = other.Amount;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Accountnumber = input.ReadString();
+            break;
+          }
+          case 16: {
+            Amount = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Accountnumber = input.ReadString();
+            break;
+          }
+          case 16: {
+            Amount = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class AccountGrpcResponse : pb::IMessage<AccountGrpcResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -225,7 +437,7 @@ namespace Accounts.Server.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Accounts.Server.Protos.AccountReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Accounts.Server.Protos.AccountReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

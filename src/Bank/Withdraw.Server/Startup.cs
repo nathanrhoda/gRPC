@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Withdraw.Server.Services;
 
 namespace Withdraw.Server
 {
@@ -30,8 +31,8 @@ namespace Withdraw.Server
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGrpcService<GreeterService>();
+            {                
+                endpoints.MapGrpcService<WithdrawServiceImpl>().RequireHost("*:24313");
 
                 endpoints.MapGet("/", async context =>
                 {

@@ -14,7 +14,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="proto\" />
+    <None Update="proto\account.proto">
+      <GrpcServices>Clients</GrpcServices>
+      <OutputDir>%(RelativePath)models/</OutputDir>
+    </None>
+    <None Update="proto\withdraw.proto">
+      <GrpcServices>Clients</GrpcServices>
+      <OutputDir>%(RelativePath)models/</OutputDir>
+    </None>
   </ItemGroup>
 
 </Project>

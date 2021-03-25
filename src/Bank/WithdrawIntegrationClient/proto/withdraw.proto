@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "WithdrawIntegrationClient";
+
+message WithdrawRequest {
+  string accountnumber = 1;
+  int64 amount = 2;
+}
+
+message WithdrawRespone {
+  bool isSuccessfull = 1;
+}
+
+service WithdrawGrpcService 
+{  
+  rpc MakeWithdrawal(WithdrawRequest) returns (WithdrawRespone);
+}

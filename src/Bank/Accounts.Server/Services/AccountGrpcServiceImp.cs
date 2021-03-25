@@ -1,5 +1,4 @@
-﻿using Accounts.Domain;
-using Accounts.Server.Protos;
+﻿using Accounts.Server.Protos;
 using Grpc.Core;
 using System;
 using System.Threading.Tasks;
@@ -9,21 +8,35 @@ namespace Accounts.Server.Services
 {
     public class AccountGrpcServiceImp : AccountGrpcServiceBase
     {
-        private IAccountService _accountService { get; set; }
-        public AccountGrpcServiceImp(IAccountService accountService)
-        {
-            _accountService = accountService;
-        }
-
         public override async Task<AccountGrpcResponse> GetAccount(AccountGrpcRequest request, ServerCallContext context)
         {
-            var account = await _accountService.GetAccountBy(request.Accountnumber);
-            return await Task.FromResult(
-                new AccountGrpcResponse
+            AccountGrpcResponse response = new AccountGrpcResponse();
+
+            if (request.Accountnumber == "123")
+            {
+                response = new AccountGrpcResponse
                 {
-                    Accountnumber = account.AccountNumber,
-                    Amount = Convert.ToInt64(account.Balance)
-                });
+                    Accountnumber = request.Accountnumber,
+                    Amount = Convert.ToInt64(20000)
+                };
+            }
+            return await Task.FromResult(response);
+        }
+
+        public override async Task<AccountGrpcResponse> UpdateBalance(UpdateBalanceRequest request, ServerCallContext context)
+        {
+
+            AccountGrpcResponse response = new AccountGrpcResponse();
+
+            if (request.Accountnumber == "123")
+            {
+                response = new AccountGrpcResponse
+                {
+                    Accountnumber = request.Accountnumber,
+                    Amount = Convert.ToInt64(20000) - request.Amount
+                };
+            }
+            return await Task.FromResult(response);
         }
     }
 }
