@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bank.Domain\Bank.Domain.csproj" />
+    <ProjectReference Include="..\Bank.Messages\Bank.Messages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="proto\account.proto">
+      <GrpcServices>Clients</GrpcServices>
+      <OutputDir>%(RelativePath)models/</OutputDir>
+    </None>
+    <None Update="proto\withdraw.proto">
+      <GrpcServices>Clients</GrpcServices>
+      <OutputDir>%(RelativePath)models/</OutputDir>
+    </None>
+  </ItemGroup>
+
+</Project>

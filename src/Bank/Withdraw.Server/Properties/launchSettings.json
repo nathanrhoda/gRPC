@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "Withdraw.Server": {
+      "commandName": "Project",
+      "dotnetRunMessages": "true",
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:24313;https://localhost:24314",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
