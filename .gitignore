@@ -54,3 +54,5 @@
 /src/Bank/Withdraw.Domain/bin/Debug/netstandard2.1
 /src/Bank/WithdrawIntegrationClient/bin/Debug/netstandard2.1
 /src/Bank/WithdrawIntegrationClient/obj
+/src/Bank/AccountIntegrationClient/bin/Debug
+/src/Bank/AccountIntegrationClient/obj

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AccountConsoleClient\AccountIntegrationClient.csproj" />
+    <ProjectReference Include="..\AccountIntegrationClient\AccountIntegrationClient.csproj" />
     <ProjectReference Include="..\WithdrawIntegrationClient\WithdrawIntegrationClient.csproj" />
   </ItemGroup>
 

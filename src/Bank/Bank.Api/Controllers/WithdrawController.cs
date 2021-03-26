@@ -34,7 +34,7 @@ namespace Bank.Api.Controllers
                     TransactionId = Guid.NewGuid().ToString()
                 });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return NotFound(request.AccountNumber);
             }
